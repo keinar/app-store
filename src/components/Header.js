@@ -21,7 +21,7 @@ menuToggle = () => {
       const {cart} = this.context;
     return (
       <header>
-
+ 
         <div className="menu" onClick={this.menuToggle}>
           <img src={Menu} alt="menu" width="20px" />
         </div>
