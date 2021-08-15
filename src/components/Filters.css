@@ -11,3 +11,20 @@ nav.product-filter{
     padding: 0 10px;
 
 }
+
+.sliderFilter{
+    margin:auto;
+    padding: 20px;
+    width: 50%;
+}
+
+.sliderFilter h4{
+    font-weight: 600;
+    text-align: center;
+}
+
+.collection-sort {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}

@@ -4,7 +4,7 @@ function FilterSort() {
     return (
         <div>
              <nav className="product-filter">
-      <h1>Jackets</h1>
+     
 
       <div className="sort">
         <div className="collection-sort">

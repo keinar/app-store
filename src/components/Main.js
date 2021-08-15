@@ -21,7 +21,7 @@ const Main = () => {
 const MainWrapper = styled.main`
   max-width: ${({ theme }) => theme.widths.content};
   margin: 0 auto;
-  padding: 4rem;
-`
+ padding:10px;
+ `
 
 export default Main

@@ -1,23 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-
-const useStyles = makeStyles({
-  root: {
-    width: 600,
-    marginTop: 30,
-    marginLeft: 280,
-
-  },
-});
+import './Filters.css'
 
 function valuetext(value) {
   return `${value}$`;
 }
 
 function RangeSlider() {
-  const classes = useStyles();
   const [value, setValue] = React.useState([20, 37]);
 
   const handleChange = (event, newValue) => {
@@ -25,8 +15,8 @@ function RangeSlider() {
   };
 
   return (
-    <div className={classes.root}>
-      <Typography id="range-slider" gutterBottom variant="h3">
+    <div className="sliderFilter">
+      <Typography id="range-slider" gutterBottom variant="h4">
         Filter By Price:
       </Typography>
       <Slider
