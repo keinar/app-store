@@ -1,0 +1,13 @@
+nav.product-filter{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.sort {
+    display: flex;
+    margin: 0px 10px;
+    padding: 0 10px;
+
+}

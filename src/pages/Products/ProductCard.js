@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
@@ -8,6 +8,19 @@ import { addToCart } from '../../state/actions/cart'
 const ProductCard = ({ id, title, price, image, category }) => {
   const product = { id, title, price, image, category }
   const dispatch = useDispatch()
+  
+  const text = "Add To Cart" 
+const [buttonText, setButtonText] = useState(text);
+const color = "dark"
+const [buttonColor,setButtonColor] = useState(color);
+
+ useEffect(()=> {
+    const timer = setTimeout(()=> {
+       setButtonText(text);
+       setButtonColor(color);
+    }, 2000);
+    return ()=> clearTimeout(timer);
+ }, [buttonText] ,[buttonColor] )
 
   return (
     <ProductCardWrapper>
@@ -20,10 +33,13 @@ const ProductCard = ({ id, title, price, image, category }) => {
           <div>${price.toFixed(2)}</div>
         </Info>
         <Button
-          onClick={() => dispatch(addToCart(product))}
-          content="Add to cart"
+          onClick={() => dispatch(addToCart(product), 
+            setButtonText("Item Added!"),
+            setButtonColor("white"))
+          }
+          content={buttonText}
           size="wide"
-          color="dark"
+          color={buttonColor}
           animation="color"
         />
       </Details>

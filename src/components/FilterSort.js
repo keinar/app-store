@@ -1,14 +1,13 @@
 import React from 'react'
-
-
+import './Filters.css'
 function FilterSort() {
     return (
         <div>
-             <nav class="product-filter">
+             <nav className="product-filter">
       <h1>Jackets</h1>
 
-      <div class="sort">
-        <div class="collection-sort">
+      <div className="sort">
+        <div className="collection-sort">
           <label>Filter by:</label>
           <select>
             <option value="/">All Jackets</option>
@@ -22,7 +21,7 @@ function FilterSort() {
           </select>
         </div>
 
-        <div class="collection-sort">
+        <div className="collection-sort">
           <label>Sort by:</label>
           <select>
             <option value="/">Featured</option>
