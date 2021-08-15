@@ -1,14 +1,23 @@
-# E-Commerce
-### [Live Site](https://commerce-js.netlify.app/)
+# Shopping cart
 
-![eCommerce](https://i.ibb.co/mH9SNNq/Build-an-e-commerce-1.png)
+A simple fake store React app.
 
-## Stay up to date with new projects
-New major projects coming soon, subscribe to the mailing list to stay up to date https://javascriptmastery.eo.page/mailing-list.
+[Live Demo](https://michalosman.github.io/shopping-cart/) :point_left:
 
-## Introduction
-This is a code repository for the corresponding video tutorial. 
+## Getting started
 
-In this video, we're going to build a fully functional eCommerce application using commerce.js. 
+```
+git clone https://github.com/michalosman/shopping-cart.git
+cd shopping-cart
+npm install
+npm start
+```
 
-While building it you're going to learn many advanced React & JavaScript topics, as well as how to use Stripe for card transactions. On top of that, at the end of the video, you will have this unique and complex webshop app that you will be able to add to your portfolio. And trust me, e-commerce applications are impressive. 
+## Built with
+
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [React Router](https://reactrouter.com/)
+- [styled-components](https://styled-components.com/)
+- [Fake Store API](https://fakestoreapi.com/)
+- [Figma](https://figma.com/)
