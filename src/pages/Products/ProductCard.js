@@ -47,11 +47,6 @@ const [buttonColor,setButtonColor] = useState(color);
           color={buttonColor}
           animation="color"
         />
-        {/* <p></p>
-        <button onClick={()=>{
-        <p>{description}</p>
-        console.log({description})
-         }}>more info</button> */}
        
       </Details>
      
