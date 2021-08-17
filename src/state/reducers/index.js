@@ -1,12 +1,13 @@
 import isCartOpenReducer from './isCartOpen'
-import productsReducer from './products'
+import productsReducer, { selectedProductReducer } from './products'
 import cartReducer from './cart'
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
   isCartOpen: isCartOpenReducer,
   products: productsReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  product: selectedProductReducer
 })
 
 export default rootReducer

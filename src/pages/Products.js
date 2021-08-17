@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
 import { useDispatch, useSelector } from 'react-redux'
 import ProductCard from './Products/ProductCard'
+import HeaderFilters from '../components/HeaderFilters'
 import { setProducts } from '../state/actions/products'
 
 const Products = () => {
@@ -24,11 +25,12 @@ const Products = () => {
     return data
   }
 
+  
   const filterProducts = (products) => {
+    
     return products.filter(
       (product) =>
-        product.category === `men's clothing` ||
-        product.category === `women's clothing`
+      [...products]
     )
   }
 
@@ -39,10 +41,11 @@ const Products = () => {
       title={product.title}
       price={product.price}
       image={product.image}
+      description={product.description}
     />
   ))
 
-  return <ProductsWrapper>{productCards}</ProductsWrapper>
+  return <> <HeaderFilters/> <ProductsWrapper> {productCards} </ProductsWrapper> </>
 }
 
 const ProductsWrapper = styled.div`

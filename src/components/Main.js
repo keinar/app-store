@@ -5,14 +5,18 @@ import Home from '../pages/Home'
 import Products from '../pages/Products'
 import Contact from '../pages/Contact'
 import routes from '../constants/routes.json'
+import ProductDetail from './ProductDetails'
 
 const Main = () => {
   return (
+    
     <MainWrapper>
       <Switch>
         <Route exact path={routes.HOME} component={Home} />
         <Route exact path={routes.PRODUCTS} component={Products} />
+        <Route exact path={routes.PRODUCT} component={ProductDetail} />
         <Route exact path={routes.CONTACT}component={Contact} />
+        
       </Switch>
     </MainWrapper>
   )

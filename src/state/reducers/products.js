@@ -1,4 +1,4 @@
-import { SET_PRODUCTS } from '../../constants/actionTypes'
+import { SET_PRODUCTS, SELECTED_PRODUCT} from '../../constants/actionTypes'
 
 const INIT_STATE = []
 
@@ -11,4 +11,14 @@ const productsReducer = (state = INIT_STATE, action) => {
   }
 }
 
+export const selectedProductReducer = (state = {}, {type, payload}) =>{
+  switch (type) {
+    case SELECTED_PRODUCT:
+      return { ...state, ...payload };
+      default:
+        return state;
+    }
+  }
+
 export default productsReducer
+

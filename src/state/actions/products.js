@@ -1,4 +1,4 @@
-import { SET_PRODUCTS } from '../../constants/actionTypes'
+import { SET_PRODUCTS,SELECTED_PRODUCT } from '../../constants/actionTypes'
 
 const setProducts = (products) => {
   return {
@@ -6,5 +6,12 @@ const setProducts = (products) => {
     payload: products,
   }
 }
+
+export const selectedProduct = (product) => {
+  return { 
+      type: SELECTED_PRODUCT,
+      payload: product,
+  };
+};
 
 export { setProducts }

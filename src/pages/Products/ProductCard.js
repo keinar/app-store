@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import Button from '../../components/elements/Button'
 import { addToCart } from '../../state/actions/cart'
+import { Link } from 'react-router-dom'
 
-const ProductCard = ({ id, title, price, image, category }) => {
-  const product = { id, title, price, image, category }
+const ProductCard = ({ id, title, price, image, category,description }) => {
+  const product = { id, title, price, image, category,description }
   const dispatch = useDispatch()
   
   const text = "Add To Cart" 
@@ -29,7 +30,11 @@ const [buttonColor,setButtonColor] = useState(color);
       </ImageContainer>
       <Details>
         <Info>
-          <Title>{title}</Title>
+          
+          <Link to={`/shopping-cart/products/` + id}>
+            <Title>{title}</Title>
+            </Link>
+
           <div>${price.toFixed(2)}</div>
         </Info>
         <Button
@@ -42,7 +47,14 @@ const [buttonColor,setButtonColor] = useState(color);
           color={buttonColor}
           animation="color"
         />
+        {/* <p></p>
+        <button onClick={()=>{
+        <p>{description}</p>
+        console.log({description})
+         }}>more info</button> */}
+       
       </Details>
+     
     </ProductCardWrapper>
   )
 }
@@ -53,6 +65,7 @@ ProductCard.propTypes = {
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   category: PropTypes.string,
+  description: PropTypes.string,
 }
 
 const ProductCardWrapper = styled.div`

@@ -27,4 +27,13 @@ nav.product-filter{
     display: flex;
     flex-direction: column;
     margin: 0 10px;
+    width: 160px;
+}
+
+.HeaderFilters{
+    margin-top: 50px;
+}
+
+.collection-sort select {
+    font-size: 15px;
 }

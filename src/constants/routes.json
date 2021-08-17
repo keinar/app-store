@@ -1,5 +1,6 @@
 {
   "HOME": "/shopping-cart",
   "PRODUCTS": "/shopping-cart/products",
-  "CONTACT": "/shopping-cart/contact"
+  "CONTACT": "/shopping-cart/contact",
+  "PRODUCT": "/shopping-cart/products/:productId"
 }
