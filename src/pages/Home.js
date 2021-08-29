@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import homepageImage from '../assets/images/homepage-image.png'
-import underline from '../assets/images/underline.png'
-import Button from '../components/elements/Button'
-import routes from '../constants/routes.json'
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import homepageImage from "../assets/images/homepage-image.jpg";
+import underline from "../assets/images/underline.png";
+import Button from "../components/elements/Button";
+import routes from "../constants/routes.json";
 
 const Home = () => {
   return (
@@ -25,8 +25,8 @@ const Home = () => {
       </Message>
       <Image src={homepageImage} alt="people"></Image>
     </HomeWrapper>
-  )
-}
+  );
+};
 
 const HomeWrapper = styled.div`
   display: flex;
@@ -42,7 +42,7 @@ const HomeWrapper = styled.div`
   @media (max-width: 768px) {
     margin-top: 1rem;
   }
-`
+`;
 
 const Message = styled.div`
   display: flex;
@@ -63,7 +63,7 @@ const Message = styled.div`
   @media (max-width: 1024px) {
     align-items: center;
   }
-`
+`;
 
 const SmallMessage = styled.div`
   color: ${({ theme }) => theme.colors.grey.dark};
@@ -75,7 +75,7 @@ const SmallMessage = styled.div`
   @media (max-width: 450px) {
     font-size: 1.4rem;
   }
-`
+`;
 
 const BigMessage = styled.div`
   font-size: 6.4rem;
@@ -89,7 +89,7 @@ const BigMessage = styled.div`
   @media (max-width: 450px) {
     font-size: 5rem;
   }
-`
+`;
 
 const Underline = styled.img`
   width: 25rem;
@@ -99,7 +99,7 @@ const Underline = styled.img`
   @media (max-width: 1024px) {
     display: none;
   }
-`
+`;
 
 const Image = styled.img`
   width: 75rem;
@@ -125,6 +125,6 @@ const Image = styled.img`
   @media (max-width: 600px) {
     top: 25rem;
   }
-`
+`;
 
-export default Home
+export default Home;
