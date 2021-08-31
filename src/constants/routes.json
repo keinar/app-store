@@ -2,5 +2,6 @@
   "HOME": "/shopping-cart",
   "PRODUCTS": "/shopping-cart/products",
   "CONTACT": "/shopping-cart/contact",
+  "ADMIN": "/shopping-cart/admin",
   "PRODUCT": "/shopping-cart/products/:productId"
 }

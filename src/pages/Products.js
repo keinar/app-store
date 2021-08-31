@@ -1,52 +1,52 @@
-import React, { useEffect } from 'react'
-import styled from 'styled-components'
-import { v4 as uuidv4 } from 'uuid'
-import { useDispatch, useSelector } from 'react-redux'
-import ProductCard from './Products/ProductCard'
-import HeaderFilters from '../components/HeaderFilters'
-import { setProducts } from '../state/actions/products'
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import { v4 as uuidv4 } from "uuid";
+import { useDispatch, useSelector } from "react-redux";
+import ProductCard from "./Products/ProductCard";
+import HeaderFilters from "../components/HeaderFilters";
+import { setProducts } from "../state/actions/products";
 
 const Products = () => {
-  const products = useSelector((state) => state.products)
-  const dispatch = useDispatch()
+  const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    loadProducts()
+    loadProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   const loadProducts = async () => {
-    dispatch(setProducts(filterProducts(await fetchProducts())))
-  }
+    dispatch(setProducts(filterProducts(await fetchProducts())));
+  };
 
   const fetchProducts = async () => {
-    const response = await fetch('https://fakestoreapi.com/products')
-    let data = await response.json()
-    return data
-  }
+    const response = await fetch("http://localhost:8080/products");
+    let data = await response.json();
+    return data;
+  };
 
-  
   const filterProducts = (products) => {
-    
-    return products.filter(
-      (product) =>
-      [...products]
-    )
-  }
+    return products.filter((product) => [...products]);
+  };
 
   const productCards = products.map((product) => (
     <ProductCard
       key={uuidv4()}
-      id={product.id}
+      id={product._id}
       title={product.title}
       price={product.price}
       image={product.image}
       description={product.description}
     />
-  ))
+  ));
 
-  return <> <HeaderFilters/> <ProductsWrapper> {productCards} </ProductsWrapper> </>
-}
+  return (
+    <>
+      {" "}
+      <HeaderFilters /> <ProductsWrapper> {productCards} </ProductsWrapper>{" "}
+    </>
+  );
+};
 
 const ProductsWrapper = styled.div`
   display: grid;
@@ -73,6 +73,6 @@ const ProductsWrapper = styled.div`
       opacity: 1;
     }
   }
-`
+`;
 
-export default Products
+export default Products;

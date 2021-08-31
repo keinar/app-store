@@ -102,7 +102,7 @@ const Underline = styled.img`
 `;
 
 const Image = styled.img`
-  width: 75rem;
+  width: 35rem;
   animation: fadeIn ease 2s;
 
   @keyframes fadeIn {

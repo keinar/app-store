@@ -1,19 +1,19 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { FaShoppingCart } from 'react-icons/fa'
-import { useDispatch, useSelector } from 'react-redux'
-import Button from './elements/Button'
-import routes from '../constants/routes.json'
-import { openCart } from '../state/actions'
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import Button from "./elements/Button";
+import routes from "../constants/routes.json";
+import { openCart } from "../state/actions";
 
 const Header = () => {
-  const cart = useSelector((state) => state.cart)
-  const dispatch = useDispatch()
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   const sumQuantity = () => {
-    return cart.reduce((quantity, cartItem) => quantity + cartItem.quantity, 0)
-  }
+    return cart.reduce((quantity, cartItem) => quantity + cartItem.quantity, 0);
+  };
 
   return (
     <HeaderWrapper>
@@ -25,19 +25,20 @@ const Header = () => {
           <NavbarLink to={routes.HOME}>Home</NavbarLink>
           <NavbarLink to={routes.PRODUCTS}>Shop</NavbarLink>
           <NavbarLink to={routes.CONTACT}>Contact</NavbarLink>
+          <NavbarLink to={routes.ADMIN}>Admin</NavbarLink>
           <ButtonContainer onClick={() => dispatch(openCart())}>
             <Button content={<FaShoppingCart />} shape="round" />
-            {sumQuantity() > 0 ? <Quantity>{sumQuantity()}</Quantity> : ''}
+            {sumQuantity() > 0 ? <Quantity>{sumQuantity()}</Quantity> : ""}
           </ButtonContainer>
         </Navbar>
       </Container>
     </HeaderWrapper>
-  )
-}
+  );
+};
 
 const HeaderWrapper = styled.header`
   background-color: ${({ theme }) => theme.colors.dark};
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -51,12 +52,12 @@ const Container = styled.div`
     flex-direction: column;
     gap: 4rem;
   }
-`
+`;
 
 const Logo = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 6rem;
-`
+`;
 
 const Navbar = styled.nav`
   display: flex;
@@ -69,7 +70,7 @@ const Navbar = styled.nav`
     gap: 0;
     width: 100%;
   }
-`
+`;
 
 const NavbarLink = styled(Link)`
   padding: 1rem;
@@ -79,7 +80,7 @@ const NavbarLink = styled(Link)`
   &:hover {
     transform: scale(1.1);
   }
-`
+`;
 
 const ButtonContainer = styled.div`
   position: relative;
@@ -93,7 +94,7 @@ const ButtonContainer = styled.div`
   &:active {
     transform: scale(1.02);
   }
-`
+`;
 
 const Quantity = styled.div`
   position: absolute;
@@ -108,6 +109,6 @@ const Quantity = styled.div`
   background-color: ${({ theme }) => theme.colors.red};
   font-size: 2rem;
   font-weight: bold;
-`
+`;
 
-export default Header
+export default Header;
